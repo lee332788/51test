@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <view class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{questions.length}} 题</view>
+
+  <view class="question-card" wx:if="{{!showResult}}">
+    <view class="question-text">{{currentQuestion.text}}</view>
+    <view class="options">
+      <view class="option {{selectedOption === 'A' ? 'selected' : ''}}" bindtap="selectOption" data-option="A">
+        <view class="option-label">A</view>
+        <view class="option-text">{{currentQuestion.optionA}}</view>
+      </view>
+      <view class="option {{selectedOption === 'B' ? 'selected' : ''}}" bindtap="selectOption" data-option="B">
+        <view class="option-label">B</view>
+        <view class="option-text">{{currentQuestion.optionB}}</view>
+      </view>
+      <view class="option {{selectedOption === 'C' ? 'selected' : ''}}" bindtap="selectOption" data-option="C">
+        <view class="option-label">C</view>
+        <view class="option-text">{{currentQuestion.optionC}}</view>
+      </view>
+      <view class="option {{selectedOption === 'D' ? 'selected' : ''}}" bindtap="selectOption" data-option="D">
+        <view class="option-label">D</view>
+        <view class="option-text">{{currentQuestion.optionD}}</view>
+      </view>
+    </view>
+    <button class="btn-prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="prevQuestion" disabled="{{currentIndex === 0}}">
+      ← 上一题
+    </button>
+  </view>
+
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-emoji">{{result.emoji}}</view>
+    <view class="result-type" style="color: {{result.color}}">{{result.type}}</view>
+    <view class="result-name">{{result.name}}</view>
+    <view class="result-desc">{{result.description}}</view>
+    <view class="result-tags">
+      <view class="tag" wx:for="{{result.tags}}" wx:key="*this" style="background: {{result.color}}20; color: {{result.color}}">{{item}}</view>
+    </view>
+
+    <view class="analysis-section">
+      <view class="analysis-title">📊 多维度分析</view>
+      <view class="dimension-list">
+        <view class="dimension-item">
+          <view class="dimension-label">浪漫吸引</view>
+          <view class="dimension-value" style="color: {{result.color}}">
+            {{result.type}}
+          </view>
+        </view>
+        <view class="dimension-item">
+          <view class="dimension-label">性吸引</view>
+          <view class="dimension-value" style="color: {{result.color}}">
+            {{analysis[1] ? (analysis[1].key === 'ace' ? '无性恋倾向' : analysis[1].key === 'grayAce' ? '灰色无性恋' : analysis[1].key === 'demi' ? '半性恋' : '正常') : '正常'}}
+          </view>
+        </view>
+        <view class="dimension-item">
+          <view class="dimension-label">身份认同</view>
+          <view class="dimension-value" style="color: {{result.color}}">
+            {{analysis[2] ? (analysis[2].key === 'queer' ? '酷儿/自由' : '探索中') : '确定'}}
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="spectrum-section">
+      <view class="spectrum-title">🧩 性取向光谱</view>
+      <view class="spectrum-bar">
+        <view class="spectrum-gradient"></view>
+        <view class="spectrum-marker" style="left: {{percentages.bi || 0}}%">双性恋</view>
+      </view>
+      <view class="spectrum-labels">
+        <view class="spectrum-label">异性恋</view>
+        <view class="spectrum-label">同性恋</view>
+      </view>
+    </view>
+
+    <view class="result-tip">本测试仅供娱乐参考，无论结果如何，你都是独特而美好的存在 ✨</view>
+    <button class="btn-restart" bindtap="restart">重新测试</button>
+  </view>
+</view>

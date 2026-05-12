@@ -1,0 +1,134 @@
+<view class="container">
+  <view class="version-select" wx:if="{{!testStarted}}">
+    <view class="version-header">
+      <view class="version-icon">🔮</view>
+      <view class="version-title">MBTI性格测试</view>
+      <view class="version-subtitle">选择适合你的测试版本</view>
+    </view>
+    
+    <view class="version-list">
+      <view class="version-card simple {{selectedVersion === 'simple' ? 'selected' : ''}}" bindtap="selectVersion" data-version="simple">
+        <view class="version-card-icon">📝</view>
+        <view class="version-card-title">简化版</view>
+        <view class="version-card-desc">8道题 · 快速测试</view>
+        <view class="version-card-time">约2分钟</view>
+      </view>
+      
+      <view class="version-card standard {{selectedVersion === 'standard' ? 'selected' : ''}}" bindtap="selectVersion" data-version="standard">
+        <view class="version-card-icon">📊</view>
+        <view class="version-card-title">标准版</view>
+        <view class="version-card-desc">96道题 · 全面分析</view>
+        <view class="version-card-time">约15分钟</view>
+      </view>
+      
+      <view class="version-card professional {{selectedVersion === 'professional' ? 'selected' : ''}}" bindtap="selectVersion" data-version="professional">
+        <view class="version-card-icon">🎓</view>
+        <view class="version-card-title">专业版</view>
+        <view class="version-card-desc">200道题 · 深度解读</view>
+        <view class="version-card-time">约30分钟</view>
+      </view>
+    </view>
+    
+    <button class="btn-start-test" bindtap="startTest" disabled="{{!selectedVersion}}">
+      开始测试
+    </button>
+  </view>
+
+  <view class="test-container" wx:if="{{testStarted && !showResult}}">
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progress}}%"></view>
+    </view>
+    <view class="progress-info">
+      <view class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{currentQuestions.length}} 题</view>
+      <view class="progress-version-tag">{{versionName}}</view>
+    </view>
+
+    <view class="question-card">
+      <view class="question-number">问题 {{currentIndex + 1}}</view>
+      <view class="question-text">{{currentQuestion.text}}</view>
+      <view class="options">
+        <view class="option {{selectedOption === 'A' ? 'selected' : ''}}" bindtap="selectOption" data-option="A">
+          <view class="option-label">A</view>
+          <view class="option-text">{{currentQuestion.optionA}}</view>
+        </view>
+        <view class="option {{selectedOption === 'B' ? 'selected' : ''}}" bindtap="selectOption" data-option="B">
+          <view class="option-label">B</view>
+          <view class="option-text">{{currentQuestion.optionB}}</view>
+        </view>
+      </view>
+      <button class="btn-prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="prevQuestion" disabled="{{currentIndex === 0}}">
+        ← 上一题
+      </button>
+    </view>
+  </view>
+
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-badge">{{versionName}}版</view>
+    <view class="result-type">{{result.type}}</view>
+    <view class="result-name">{{result.name}}</view>
+    <view class="result-percentage">
+      <view class="percentage-item">
+        <view class="percentage-label">外倾型 E</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.E}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.E}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">内倾型 I</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.I}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.I}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">感觉型 S</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.S}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.S}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">直觉型 N</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.N}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.N}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">思考型 T</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.T}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.T}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">情感型 F</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.F}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.F}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">判断型 J</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.J}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.J}}%</view>
+      </view>
+      <view class="percentage-item">
+        <view class="percentage-label">感知型 P</view>
+        <view class="percentage-bar">
+          <view class="percentage-fill" style="width: {{percentages.P}}%"></view>
+        </view>
+        <view class="percentage-value">{{percentages.P}}%</view>
+      </view>
+    </view>
+    <view class="result-desc">{{result.description}}</view>
+    <view class="result-tags">
+      <view class="tag" wx:for="{{result.tags}}" wx:key="*this">{{item}}</view>
+    </view>
+    <button class="btn-restart" bindtap="restart">重新测试</button>
+    <button class="btn-back" bindtap="backToHome">返回选择</button>
+  </view>
+</view>

@@ -1,0 +1,224 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 50%, #8b5cf6 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fff 0%, #10b981 100%);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 28rpx;
+  margin-bottom: 60rpx;
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 60rpx 40rpx;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.15);
+}
+
+.question-text {
+  font-size: 36rpx;
+  color: #10b981;
+  line-height: 56rpx;
+  margin-bottom: 60rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+  margin-bottom: 60rpx;
+}
+
+.option {
+  background: rgba(16, 185, 129, 0.08);
+  border: 2rpx solid rgba(16, 185, 129, 0.2);
+  border-radius: 16rpx;
+  padding: 40rpx 30rpx;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  transition: all 0.3s ease;
+}
+
+.option.selected {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #10b981;
+  transform: scale(1.02);
+}
+
+.option-label {
+  width: 60rpx;
+  height: 60rpx;
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-text {
+  font-size: 30rpx;
+  color: #10b981;
+  line-height: 44rpx;
+  flex: 1;
+}
+
+.btn-prev {
+  flex: 1;
+  height: 96rpx;
+  background: rgba(255, 255, 255, 0.3);
+  color: #10b981;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-prev.disabled {
+  opacity: 0.4;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 60rpx 40rpx;
+  text-align: center;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.15);
+}
+
+.result-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 40rpx;
+}
+
+.radar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.radar-chart {
+  width: 600rpx;
+  height: 600rpx;
+}
+
+.talent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  margin-bottom: 40rpx;
+}
+
+.talent-item {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.talent-info {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  width: 140rpx;
+}
+
+.talent-icon {
+  font-size: 36rpx;
+}
+
+.talent-name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.talent-bar {
+  flex: 1;
+  height: 20rpx;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.talent-fill {
+  height: 100%;
+  border-radius: 10rpx;
+  transition: width 0.5s ease;
+}
+
+.talent-score {
+  width: 60rpx;
+  text-align: right;
+  font-size: 24rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.tag {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 16rpx 32rpx;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.result-desc {
+  font-size: 30rpx;
+  color: #666;
+  line-height: 50rpx;
+  margin-bottom: 60rpx;
+}
+
+.btn-restart {
+  width: 100%;
+  height: 100rpx;
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(16, 185, 129, 0.3);
+}

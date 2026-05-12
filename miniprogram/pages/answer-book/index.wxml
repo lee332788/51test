@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="eye-container">
+    <view class="eye-outer">
+      <view class="eye-inner">
+        <view class="eye-pupil"></view>
+      </view>
+    </view>
+  </view>
+  <view class="title-small">✦ 宇宙之声 ✦</view>
+  <view class="title-main">答案之书</view>
+  <view class="description">
+    <text>于此间沉思，向星辰祈请</text>
+    <text>虚空将破开迷雾，赐予你真诚的指引</text>
+  </view>
+  <view class="answer-container" wx:if="{{showAnswer}}">
+    <view class="answer-text">{{answer}}</view>
+  </view>
+  <button class="btn-start" bindtap="getAnswer" disabled="{{isAnimating}}">
+    {{isAnimating ? '正在连接宇宙...' : '开始求解'}}
+  </button>
+</view>

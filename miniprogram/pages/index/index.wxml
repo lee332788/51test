@@ -1,0 +1,73 @@
+<view class="container">
+  <view class="answer-book-section" bindtap="goToAnswerBook">
+    <view class="answer-book-card">
+      <view class="eye-container">
+        <view class="eye-outer">
+          <view class="eye-inner">
+            <view class="eye-pupil"></view>
+          </view>
+        </view>
+      </view>
+      <view class="answer-book-title">答案之书</view>
+      <view class="answer-book-subtitle">向宇宙寻求答案</view>
+      <view class="answer-book-btn">开始探索 →</view>
+    </view>
+  </view>
+
+  <view class="tests-section">
+    <view class="section-title">趣味测试</view>
+    <view class="tests-grid">
+      <view class="test-card mbti" bindtap="goToTest" data-page="mbti-test">
+        <view class="test-icon">🔮</view>
+        <view class="test-title">MBTI性格测试</view>
+        <view class="test-desc">探索你的性格类型</view>
+      </view>
+      <view class="test-card sbti" bindtap="goToTest" data-page="sbti-test">
+        <view class="test-icon">✨</view>
+        <view class="test-title">SBTI人格测试</view>
+        <view class="test-desc">发现你的独特风格</view>
+      </view>
+      <view class="test-card couple" bindtap="goToTest" data-page="couple-match">
+        <view class="test-icon">💕</view>
+        <view class="test-title">情侣匹配度</view>
+        <view class="test-desc">测试你们的契合度</view>
+      </view>
+      <view class="test-card city" bindtap="goToTest" data-page="city-match">
+        <view class="test-icon">🌆</view>
+        <view class="test-title">性格城市匹配</view>
+        <view class="test-desc">找到最适合你的城市</view>
+      </view>
+      <view class="test-card love-brain" bindtap="goToTest" data-page="love-brain-test">
+        <view class="test-icon">💝</view>
+        <view class="test-title">恋爱脑测试</view>
+        <view class="test-desc">测测你的恋爱程度</view>
+      </view>
+      <view class="test-card sexuality" bindtap="goToTest" data-page="sexuality-test">
+        <view class="test-icon">🏳️‍🌈</view>
+        <view class="test-title">性取向测试</view>
+        <view class="test-desc">探索你的内心世界</view>
+      </view>
+      <view class="test-card talent" bindtap="goToTest" data-page="talent-test">
+        <view class="test-icon">🌟</view>
+        <view class="test-title">自身天赋测试</view>
+        <view class="test-desc">发现你的潜在天赋</view>
+      </view>
+      <view class="test-card history" bindtap="goToTest" data-page="history-figures-test">
+        <view class="test-icon">👑</view>
+        <view class="test-title">历史人物测试</view>
+        <view class="test-desc">你最像哪个历史人物</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="more-section">
+    <view class="section-title">更多精彩</view>
+    <view class="more-list">
+      <view class="more-item">
+        <view class="more-icon">🎁</view>
+        <view class="more-text">更多测试即将上线</view>
+        <view class="more-arrow">→</view>
+      </view>
+    </view>
+  </view>
+</view>

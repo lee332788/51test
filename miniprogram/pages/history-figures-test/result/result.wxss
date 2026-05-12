@@ -1,0 +1,198 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+  padding-bottom: 120rpx;
+}
+
+.result-header {
+  text-align: center;
+  padding: 60rpx 0;
+}
+
+.result-emoji {
+  font-size: 140rpx;
+  margin-bottom: 20rpx;
+}
+
+.result-title {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10rpx;
+}
+
+.result-name {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 30rpx rgba(255, 215, 0, 0.5);
+  margin-bottom: 8rpx;
+}
+
+.result-dynasty {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.match-rate {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.match-label {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10rpx;
+}
+
+.match-value {
+  font-size: 72rpx;
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 0 0 20rpx rgba(255, 215, 0, 0.3);
+  margin-bottom: 20rpx;
+}
+
+.match-bar {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.match-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700 0%, #ffb347 100%);
+  border-radius: 6rpx;
+}
+
+.analysis-card,
+.figure-card,
+.match-reason,
+.reality-analysis,
+.current-state {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1a1a2e;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid rgba(26, 26, 46, 0.1);
+}
+
+.dimension-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+}
+
+.dimension-item {
+  position: relative;
+}
+
+.dimension-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.dimension-icon {
+  font-size: 32rpx;
+  margin-right: 12rpx;
+}
+
+.dimension-name {
+  font-size: 28rpx;
+  color: #1a1a2e;
+  font-weight: bold;
+  flex: 1;
+}
+
+.dimension-score {
+  font-size: 28rpx;
+  color: #666;
+  font-weight: bold;
+}
+
+.dimension-bar {
+  width: 100%;
+  height: 16rpx;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.dimension-fill {
+  height: 100%;
+  border-radius: 8rpx;
+  transition: width 0.5s ease;
+}
+
+.dimension-desc {
+  font-size: 22rpx;
+  color: #888;
+  line-height: 32rpx;
+}
+
+.figure-intro,
+.reason-content,
+.reality-content,
+.state-content {
+  font-size: 28rpx;
+  color: #444;
+  line-height: 48rpx;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 30rpx;
+}
+
+.btn-share,
+.btn-save {
+  flex: 1;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-icon {
+  font-size: 36rpx;
+  margin-bottom: 4rpx;
+}
+
+.btn-text {
+  font-size: 24rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-restart {
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+  color: #1a1a2e;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 50rpx;
+  border: none;
+  box-shadow: 0 10rpx 40rpx rgba(255, 215, 0, 0.3);
+}

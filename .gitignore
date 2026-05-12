@@ -1,0 +1,13 @@
+node_modules/
+.DS_Store
+.project
+.settings
+*.swp
+*.swo
+*.log
+npm-debug.log
+yarn-error.log
+dist/
+build/
+.project.private.config.json
+project.private.config.json

@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/answer-book/index",
+    "pages/mbti-test/index",
+    "pages/sbti-test/index",
+    "pages/couple-match/index",
+    "pages/city-match/index",
+    "pages/love-brain-test/index",
+    "pages/sexuality-test/index",
+    "pages/talent-test/index",
+    "pages/history-figures-test/index",
+    "pages/history-figures-test/quiz/quiz",
+    "pages/history-figures-test/result/result"
+  ],
+  "window": {
+    "backgroundColor": "#1a1a2e",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#16213e",
+    "navigationBarTitleText": "51 test",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

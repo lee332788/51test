@@ -1,0 +1,241 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b9d 0%, #c44569 100%);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 28rpx;
+  margin-bottom: 60rpx;
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 24rpx;
+  padding: 50rpx 35rpx;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.08);
+}
+
+.question-text {
+  font-size: 34rpx;
+  color: #333;
+  line-height: 52rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  margin-bottom: 50rpx;
+}
+
+.option {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2rpx solid rgba(255, 107, 157, 0.2);
+  border-radius: 16rpx;
+  padding: 30rpx 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.option.selected {
+  background: rgba(255, 107, 157, 0.15);
+  border-color: #ff6b9d;
+  transform: scale(1.02);
+}
+
+.option-label {
+  width: 56rpx;
+  height: 56rpx;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-text {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 42rpx;
+  flex: 1;
+}
+
+.btn-prev {
+  flex: 1;
+  height: 96rpx;
+  background: rgba(255, 107, 157, 0.1);
+  color: #c44569;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 107, 157, 0.3);
+}
+
+.btn-prev.disabled {
+  opacity: 0.4;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24rpx;
+  padding: 60rpx 35rpx;
+  text-align: center;
+  backdrop-filter: blur(10rpx);
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.08);
+}
+
+.result-emoji {
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+}
+
+.match-score {
+  font-size: 130rpx;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 5rpx;
+}
+
+.match-label {
+  font-size: 30rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+}
+
+.result-name {
+  font-size: 44rpx;
+  color: #333;
+  margin-bottom: 24rpx;
+  font-weight: bold;
+}
+
+.result-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 48rpx;
+  margin-bottom: 30rpx;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.tag {
+  background: rgba(255, 107, 157, 0.15);
+  color: #c44569;
+  padding: 14rpx 28rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+}
+
+.analysis-section {
+  background: rgba(255, 107, 157, 0.08);
+  border-radius: 20rpx;
+  padding: 30rpx 24rpx;
+  margin-bottom: 40rpx;
+}
+
+.analysis-title {
+  font-size: 30rpx;
+  color: #c44569;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  text-align: left;
+}
+
+.dimension-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.dimension-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.dimension-name {
+  width: 140rpx;
+  font-size: 26rpx;
+  color: #666;
+  text-align: left;
+}
+
+.dimension-bar {
+  flex: 1;
+  height: 16rpx;
+  background: rgba(255, 107, 157, 0.15);
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.dimension-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b9d 0%, #c44569 100%);
+  border-radius: 8rpx;
+  transition: width 0.5s ease;
+}
+
+.dimension-level {
+  width: 100rpx;
+  font-size: 22rpx;
+  color: #999;
+  text-align: right;
+}
+
+.dimension-level.excellent {
+  color: #ff6b9d;
+}
+
+.dimension-level.good {
+  color: #c44569;
+}
+
+.btn-restart {
+  width: 100%;
+  height: 96rpx;
+  background: rgba(255, 107, 157, 0.1);
+  color: #c44569;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 107, 157, 0.3);
+}

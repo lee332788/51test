@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <view class="progress-info">
+    <view class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{questions.length}} 题</view>
+    <view class="progress-hint">点击选项自动跳转下一题</view>
+  </view>
+
+  <view class="question-card">
+    <view class="question-text">{{currentQuestion.text}}</view>
+    <view class="options">
+      <view class="option {{selectedOption === 'A' ? 'selected' : ''}}" bindtap="selectOption" data-option="A">
+        <view class="option-label">A</view>
+        <view class="option-text">{{currentQuestion.optionA}}</view>
+      </view>
+      <view class="option {{selectedOption === 'B' ? 'selected' : ''}}" bindtap="selectOption" data-option="B">
+        <view class="option-label">B</view>
+        <view class="option-text">{{currentQuestion.optionB}}</view>
+      </view>
+      <view class="option {{selectedOption === 'C' ? 'selected' : ''}}" bindtap="selectOption" data-option="C">
+        <view class="option-label">C</view>
+        <view class="option-text">{{currentQuestion.optionC}}</view>
+      </view>
+      <view class="option {{selectedOption === 'D' ? 'selected' : ''}}" bindtap="selectOption" data-option="D">
+        <view class="option-label">D</view>
+        <view class="option-text">{{currentQuestion.optionD}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="nav-buttons">
+    <button class="btn-nav btn-prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="prevQuestion" disabled="{{currentIndex === 0}}">
+      ← 上一题
+    </button>
+    <button class="btn-nav btn-next {{currentIndex === questions.length - 1 ? 'disabled' : ''}}" bindtap="nextQuestion" disabled="{{currentIndex === questions.length - 1}}">
+      下一题 →
+    </button>
+  </view>
+</view>

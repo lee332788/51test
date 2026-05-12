@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="header">
+    <view class="header-icon">👑</view>
+    <view class="header-title">你最像哪个历史人物</view>
+    <view class="header-subtitle">通过心理测试发现你的历史人物特质</view>
+  </view>
+
+  <view class="preference-section">
+    <view class="section-title">请选择人物方向</view>
+    <view class="options">
+      <view class="option-item {{selectedPreference === 'female' ? 'selected' : ''}}" bindtap="selectPreference" data-value="female">
+        <view class="option-icon">👸</view>
+        <view class="option-content">
+          <view class="option-title">女性人物优先</view>
+          <view class="option-desc">测试结果将优先匹配女性历史人物</view>
+        </view>
+        <view class="option-check" wx:if="{{selectedPreference === 'female'}}">✓</view>
+      </view>
+
+      <view class="option-item {{selectedPreference === 'male' ? 'selected' : ''}}" bindtap="selectPreference" data-value="male">
+        <view class="option-icon">🤴</view>
+        <view class="option-content">
+          <view class="option-title">男性人物优先</view>
+          <view class="option-desc">测试结果将优先匹配男性历史人物</view>
+        </view>
+        <view class="option-check" wx:if="{{selectedPreference === 'male'}}">✓</view>
+      </view>
+
+      <view class="option-item {{selectedPreference === 'random' ? 'selected' : ''}}" bindtap="selectPreference" data-value="random">
+        <view class="option-icon">🎲</view>
+        <view class="option-content">
+          <view class="option-title">随机匹配</view>
+          <view class="option-desc">随机匹配所有历史人物</view>
+        </view>
+        <view class="option-check" wx:if="{{selectedPreference === 'random'}}">✓</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="start-section">
+    <button class="btn-start {{selectedPreference ? '' : 'disabled'}}" bindtap="startTest" disabled="{{!selectedPreference}}">
+      开始测试
+    </button>
+  </view>
+
+  <view class="info-section">
+    <view class="info-icon">ℹ️</view>
+    <view class="info-text">测试共24道题目，预计用时3-5分钟</view>
+  </view>
+</view>

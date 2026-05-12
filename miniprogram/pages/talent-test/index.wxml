@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <view class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{questions.length}} 题</view>
+
+  <view class="question-card" wx:if="{{!showResult}}">
+    <view class="question-text">{{currentQuestion.text}}</view>
+    <view class="options">
+      <view class="option {{selectedOption === 'A' ? 'selected' : ''}}" bindtap="selectOption" data-option="A">
+        <view class="option-label">A</view>
+        <view class="option-text">{{currentQuestion.optionA}}</view>
+      </view>
+      <view class="option {{selectedOption === 'B' ? 'selected' : ''}}" bindtap="selectOption" data-option="B">
+        <view class="option-label">B</view>
+        <view class="option-text">{{currentQuestion.optionB}}</view>
+      </view>
+      <view class="option {{selectedOption === 'C' ? 'selected' : ''}}" bindtap="selectOption" data-option="C">
+        <view class="option-label">C</view>
+        <view class="option-text">{{currentQuestion.optionC}}</view>
+      </view>
+      <view class="option {{selectedOption === 'D' ? 'selected' : ''}}" bindtap="selectOption" data-option="D">
+        <view class="option-label">D</view>
+        <view class="option-text">{{currentQuestion.optionD}}</view>
+      </view>
+    </view>
+    <button class="btn-prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="prevQuestion" disabled="{{currentIndex === 0}}">
+      ← 上一题
+    </button>
+  </view>
+
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-title">你的天赋图谱</view>
+    <view class="radar-container">
+      <canvas canvas-id="radarChart" class="radar-chart"></canvas>
+    </view>
+    <view class="talent-list">
+      <view class="talent-item" wx:for="{{talentScores}}" wx:key="name">
+        <view class="talent-info">
+          <view class="talent-icon">{{item.icon}}</view>
+          <view class="talent-name">{{item.name}}</view>
+        </view>
+        <view class="talent-bar">
+          <view class="talent-fill" style="width: {{item.score}}%; background: {{item.color}};"></view>
+        </view>
+        <view class="talent-score">{{item.score}}</view>
+      </view>
+    </view>
+    <view class="result-tags">
+      <view class="tag" wx:for="{{topTalents}}" wx:key="name">{{item.name}}</view>
+    </view>
+    <view class="result-desc">{{resultDescription}}</view>
+    <button class="btn-restart" bindtap="restart">重新测试</button>
+  </view>
+</view>

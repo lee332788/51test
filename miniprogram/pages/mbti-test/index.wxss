@@ -1,0 +1,358 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.version-select {
+  padding-top: 40rpx;
+}
+
+.version-header {
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.version-icon {
+  font-size: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+.version-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 16rpx;
+}
+
+.version-subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.version-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30rpx;
+  margin-bottom: 60rpx;
+}
+
+.version-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.version-card.selected {
+  transform: scale(1.02);
+}
+
+.version-card.simple.selected {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.version-card.standard.selected {
+  background: rgba(118, 75, 162, 0.2);
+  border-color: #764ba2;
+}
+
+.version-card.professional.selected {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: #daa520;
+}
+
+.version-card-icon {
+  font-size: 64rpx;
+  margin-bottom: 20rpx;
+}
+
+.version-card-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.version-card-desc {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10rpx;
+}
+
+.version-card-time {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-start-test {
+  width: 100%;
+  height: 100rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: none;
+  box-shadow: 0 8rpx 30rpx rgba(102, 126, 234, 0.4);
+}
+
+.btn-start-test[disabled] {
+  opacity: 0.4;
+}
+
+.test-container {
+  padding-top: 20rpx;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.progress-version-tag {
+  font-size: 24rpx;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.2);
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 24rpx;
+  padding: 50rpx 35rpx;
+  backdrop-filter: blur(10rpx);
+}
+
+.question-number {
+  text-align: center;
+  font-size: 28rpx;
+  color: #667eea;
+  margin-bottom: 20rpx;
+}
+
+.question-text {
+  font-size: 34rpx;
+  color: #fff;
+  line-height: 52rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 25rpx;
+  margin-bottom: 50rpx;
+}
+
+.option {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 16rpx;
+  padding: 35rpx 25rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.option.selected {
+  background: rgba(102, 126, 234, 0.3);
+  border-color: #667eea;
+}
+
+.option-label {
+  width: 55rpx;
+  height: 55rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-text {
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 42rpx;
+  flex: 1;
+}
+
+.btn-next {
+  width: 100%;
+  height: 96rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: none;
+  box-shadow: 0 8rpx 30rpx rgba(102, 126, 234, 0.4);
+}
+
+.btn-next[disabled] {
+  opacity: 0.4;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 24rpx;
+  padding: 60rpx 35rpx;
+  text-align: center;
+  backdrop-filter: blur(10rpx);
+}
+
+.result-badge {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.2);
+  padding: 10rpx 30rpx;
+  border-radius: 25rpx;
+  margin-bottom: 30rpx;
+}
+
+.result-type {
+  font-size: 96rpx;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 15rpx;
+}
+
+.result-name {
+  font-size: 36rpx;
+  color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.result-percentage {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.percentage-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18rpx;
+}
+
+.percentage-item:last-child {
+  margin-bottom: 0;
+}
+
+.percentage-label {
+  width: 130rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+}
+
+.percentage-bar {
+  flex: 1;
+  height: 16rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8rpx;
+  margin: 0 15rpx;
+  overflow: hidden;
+}
+
+.percentage-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 8rpx;
+  transition: width 0.5s ease;
+}
+
+.percentage-value {
+  width: 80rpx;
+  font-size: 24rpx;
+  color: #667eea;
+  text-align: right;
+}
+
+.result-desc {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 48rpx;
+  margin-bottom: 35rpx;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15rpx;
+  justify-content: center;
+  margin-bottom: 50rpx;
+}
+
+.tag {
+  background: rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  padding: 14rpx 28rpx;
+  border-radius: 25rpx;
+  font-size: 24rpx;
+}
+
+.btn-restart {
+  width: 100%;
+  height: 90rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: none;
+  margin-bottom: 25rpx;
+}
+
+.btn-back {
+  width: 100%;
+  height: 90rpx;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+}

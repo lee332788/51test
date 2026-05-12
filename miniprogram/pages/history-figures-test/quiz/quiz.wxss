@@ -1,0 +1,120 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700 0%, #ffb347 100%);
+  border-radius: 5rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.progress-hint {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24rpx;
+  padding: 50rpx 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.2);
+}
+
+.question-text {
+  font-size: 34rpx;
+  color: #1a1a2e;
+  line-height: 52rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.option {
+  background: rgba(26, 26, 46, 0.05);
+  border: 2rpx solid rgba(26, 26, 46, 0.1);
+  border-radius: 16rpx;
+  padding: 36rpx 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  transition: all 0.3s ease;
+}
+
+.option.selected {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: #ffd700;
+  transform: scale(1.02);
+}
+
+.option-label {
+  width: 56rpx;
+  height: 56rpx;
+  background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a1a2e;
+  font-size: 26rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.option-text {
+  font-size: 28rpx;
+  color: #1a1a2e;
+  line-height: 42rpx;
+  flex: 1;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 24rpx;
+}
+
+.btn-nav {
+  flex: 1;
+  height: 90rpx;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 16rpx;
+  border: 2rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-nav.disabled {
+  opacity: 0.4;
+}

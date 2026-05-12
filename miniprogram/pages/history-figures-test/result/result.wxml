@@ -1,0 +1,66 @@
+<view class="container">
+  <view class="result-header">
+    <view class="result-emoji">{{matchedFigure.emoji}}</view>
+    <view class="result-title">你最像的历史人物</view>
+    <view class="result-name">{{matchedFigure.name}}</view>
+    <view class="result-dynasty">{{matchedFigure.dynasty}}</view>
+  </view>
+
+  <view class="match-rate">
+    <view class="match-label">性格匹配度</view>
+    <view class="match-value">{{matchRate}}%</view>
+    <view class="match-bar">
+      <view class="match-fill" style="width: {{matchRate}}%"></view>
+    </view>
+  </view>
+
+  <view class="analysis-card">
+    <view class="card-title">能力结构分析</view>
+    <view class="dimension-list">
+      <view class="dimension-item" wx:for="{{dimensions}}" wx:key="name">
+        <view class="dimension-header">
+          <view class="dimension-icon">{{item.icon}}</view>
+          <view class="dimension-name">{{item.name}}</view>
+          <view class="dimension-score">{{item.score}}分</view>
+        </view>
+        <view class="dimension-bar">
+          <view class="dimension-fill" style="width: {{item.score}}%; background: {{item.color}};"></view>
+        </view>
+        <view class="dimension-desc">{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="figure-card">
+    <view class="card-title">人物介绍</view>
+    <view class="figure-intro">{{matchedFigure.introduction}}</view>
+  </view>
+
+  <view class="match-reason">
+    <view class="card-title">匹配依据</view>
+    <view class="reason-content">{{matchedFigure.matchReason}}</view>
+  </view>
+
+  <view class="reality-analysis">
+    <view class="card-title">现实表现评估</view>
+    <view class="reality-content">{{matchedFigure.realityAnalysis}}</view>
+  </view>
+
+  <view class="current-state">
+    <view class="card-title">当前状态分析</view>
+    <view class="state-content">{{matchedFigure.currentState}}</view>
+  </view>
+
+  <view class="action-buttons">
+    <button class="btn-share" bindtap="shareResult">
+      <view class="btn-icon">📤</view>
+      <view class="btn-text">分享结果</view>
+    </button>
+    <button class="btn-save" bindtap="saveResult">
+      <view class="btn-icon">💾</view>
+      <view class="btn-text">保存结果</view>
+    </button>
+  </view>
+
+  <button class="btn-restart" bindtap="restartTest">重新测试</button>
+</view>

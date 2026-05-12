@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="progress-bar">
+    <view class="progress-fill" style="width: {{progress}}%"></view>
+  </view>
+  <view class="progress-text">第 {{currentIndex + 1}} 题 / 共 {{questions.length}} 题</view>
+
+  <view class="question-card" wx:if="{{!showResult}}">
+    <view class="question-text">{{currentQuestion.text}}</view>
+    <view class="options">
+      <view class="option {{selectedOption === 'A' ? 'selected' : ''}}" bindtap="selectOption" data-option="A">
+        <view class="option-label">A</view>
+        <view class="option-text">{{currentQuestion.optionA}}</view>
+      </view>
+      <view class="option {{selectedOption === 'B' ? 'selected' : ''}}" bindtap="selectOption" data-option="B">
+        <view class="option-label">B</view>
+        <view class="option-text">{{currentQuestion.optionB}}</view>
+      </view>
+    </view>
+    <button class="btn-prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="prevQuestion" disabled="{{currentIndex === 0}}">
+      ← 上一题
+    </button>
+  </view>
+
+  <view class="result-card" wx:if="{{showResult}}">
+    <view class="result-emoji">{{result.emoji}}</view>
+    <view class="result-type">{{result.name}}</view>
+    <view class="result-subtitle">人格类型</view>
+    <view class="result-desc">{{result.description}}</view>
+    <view class="result-tags">
+      <view class="tag" wx:for="{{result.tags}}" wx:key="*this">{{item}}</view>
+    </view>
+    <button class="btn-restart" bindtap="restart">重新测试</button>
+  </view>
+</view>
